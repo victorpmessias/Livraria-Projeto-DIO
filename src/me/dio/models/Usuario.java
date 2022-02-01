@@ -13,6 +13,20 @@ public class Usuario {
     private Set<Livro> livrosALer = new LinkedHashSet<>();
     private Set<Livro> livrosLidos = new LinkedHashSet<>();
     
+    public Usuario() {
+    }
+
+    public Usuario(String nome, String senha) {
+        this.nome = nome;
+        this.senha = senha;
+    }
+
+    public Usuario(String nome, String email, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -176,9 +190,9 @@ public class Usuario {
             for(Livro livro : livrosLidos){
                 livros += livro.getNome()+ ", " ;
             }
-            System.out.println("Livros a terminados: " + livros);
+            System.out.println("Livros terminados: " + livros);
         } else {
-            throw new IllegalArgumentException("Estado de leitura invalido.");
+            System.out.println("Estado de leitura invalido.");
         }
     }
 
